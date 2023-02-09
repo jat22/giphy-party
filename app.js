@@ -5,7 +5,8 @@ async function getGif (q){
 	const res = await axios.get('http://api.giphy.com/v1/gifs/search', { params:
 	{ api_key: 'r8mZlYrWJarkeAvnYusshn8LEsTfaDP4' , q} 
 	} );
-	addGif(res.data.data[Math.floor(Math.random()* 51)].images.original.url);
+	// addGif(res.data.data[Math.floor(Math.random()* 51)].images.original.url);
+	console.log(res)
 }
 
 function addGif(url){
@@ -26,6 +27,6 @@ $('#btn-search').on('click', function(event){
 	$('#srch-term').val('');
 })
 
-$('#btn-remove').on('clikc', removeGifs())
+$('#btn-remove').on('click', removeGifs())
 
 
